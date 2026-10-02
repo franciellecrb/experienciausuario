@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description"
+        content="Observatório de Pequenas Coisas — um arquivo interativo de histórias, sons e descobertas cotidianas.">
+    <title>Observatório de Pequenas Coisas</title>
+    <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="topbar"><a class="brand" href="#inicio" aria-label="Observatório de Pequenas Coisas - início"><span
+                class="brand-mark">◌</span><span>Observatório<br><strong>de Pequenas Coisas</strong></span></a>
+        <nav id="mainNav" aria-label="Navegação principal"><a href="#explorar">Explorar</a><a
+                href="#colecao">Coleção</a><a href="#ouvir">Ouvir</a><a href="#sobre">Sobre</a></nav><button
+            id="menuBtn" class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </header>
+    <main id="inicio">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">ARQUIVO DIGITAL · EDIÇÃO 07</p>
+                <h1>Coisas pequenas também contam histórias.</h1>
+                <p>Um arquivo experimental de objetos, sons, hábitos e acontecimentos que normalmente passam
+                    despercebidos.</p>
+                <div class="hero-actions"><a class="btn primary" href="#explorar">Começar a explorar</a><button
+                        class="btn ghost" id="randomBtn" type="button">Me surpreenda</button></div>
+            </div>
+            <div class="hero-orbit" aria-hidden="true">
+                <div class="orbit o1"></div>
+                <div class="orbit o2"></div>
+                <div class="orbit o3"></div><span class="dot d1"></span><span class="dot d2"></span><span
+                    class="dot d3"></span><span class="dot d4"></span><span class="orbit-label">há algo aqui</span>
+            </div>
+        </section>
+        <section id="explorar" class="section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">01 · EXPLORAÇÃO</p>
+                    <h2>Escolha um caminho.</h2>
+                </div>
+                <p>Não existe uma ordem certa. Cada caminho revela uma pequena história.</p>
+            </div>
+            <div class="path-grid"><button class="path-card" data-filter="lugares" type="button"><span
+                        class="path-number">01</span><span
+                        class="path-icon">⌂</span><strong>Lugares</strong><span>Espaços que guardam marcas de quem
+                        passou.</span></button><button class="path-card" data-filter="objetos" type="button"><span
+                        class="path-number">02</span><span
+                        class="path-icon">◇</span><strong>Objetos</strong><span>Coisas comuns com histórias pouco
+                        comuns.</span></button><button class="path-card" data-filter="sons" type="button"><span
+                        class="path-number">03</span><span class="path-icon">◒</span><strong>Sons</strong><span>Ruídos
+                        cotidianos que formam paisagens.</span></button><button class="path-card" data-filter="hábitos"
+                    type="button"><span class="path-number">04</span><span
+                        class="path-icon">↻</span><strong>Hábitos</strong><span>Pequenos rituais que repetimos sem
+                        perceber.</span></button></div>
+        </section>
+        <section id="colecao" class="section collection">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">02 · COLEÇÃO</p>
+                    <h2>Arquivo 07</h2>
+                </div>
+                <div class="controls"><label for="search">Pesquisar <input id="search" type="search"
+                            placeholder="Digite uma palavra..." autocomplete="off"></label><button id="clearFilter"
+                        class="small-btn" type="button">Limpar</button></div>
+            </div>
+            <div id="cards" class="cards"></div>
+            <p id="empty" class="empty" hidden>Nenhum registro encontrado. Tente outra palavra ou caminho.</p>
+        </section>
+        <section id="ouvir" class="sound-section">
+            <div>
+                <p class="eyebrow">03 · PAISAGEM SONORA</p>
+                <h2>Escute o cotidiano.</h2>
+                <p>Escolha uma paisagem e imagine o lugar antes de vê-lo.</p>
+            </div>
+            <div class="sound-controls"><button class="sound-card" data-sound="chuva"
+                    type="button"><span>☁</span><strong>Chuva na janela</strong><small>sons
+                        imaginados</small></button><button class="sound-card" data-sound="estacao"
+                    type="button"><span>◎</span><strong>Estação às 6h</strong><small>sons
+                        imaginados</small></button><button class="sound-card" data-sound="cozinha"
+                    type="button"><span>◉</span><strong>Cozinha de domingo</strong><small>sons
+                        imaginados</small></button></div>
+            <div id="soundStatus" class="sound-status" role="status">Nenhuma paisagem selecionada.</div><button
+                id="speakBtn" class="btn ghost" type="button">Ler descrição em voz alta</button>
+        </section>
+        <section id="sobre" class="section about">
+            <div>
+                <p class="eyebrow">04 · SOBRE O ARQUIVO</p>
+                <h2>Observar também é uma forma de pesquisa.</h2>
+            </div>
+            <div class="about-copy">
+                <p>O Observatório reúne relatos curtos enviados por pessoas que perceberam algo curioso em situações
+                    comuns. O objetivo não é explicar tudo, mas registrar aquilo que normalmente desaparece no ruído do
+                    dia.</p>
+                <details>
+                    <summary>Como um registro entra na coleção?</summary>
+                    <p>Um registro passa por leitura, catalogação e revisão. Alguns chegam com fotografia; outros apenas
+                        com descrição, data e lugar aproximado.</p>
+                </details>
+                <details>
+                    <summary>Posso contribuir?</summary>
+                    <p>Sim. A próxima chamada de relatos será publicada quando uma nova edição for aberta.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer><span>Observatório de Pequenas Coisas · Arquivo experimental</span><a href="#inicio">Voltar ao início ↑</a>
+    </footer>
+    <dialog id="itemDialog"><button class="dialog-close" id="dialogClose" type="button" aria-label="Fechar">×</button>
+        <p id="dialogType" class="eyebrow"></p>
+        <h2 id="dialogTitle"></h2>
+        <p id="dialogText"></p>
+        <dl>
+            <div>
+                <dt>Registro</dt>
+                <dd id="dialogDate"></dd>
+            </div>
+            <div>
+                <dt>Local</dt>
+                <dd id="dialogPlace"></dd>
+            </div>
+        </dl>
+    </dialog>
+</body>
+
+</html>
